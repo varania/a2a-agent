@@ -88,6 +88,7 @@ a2a-agent/
 │       └── cli.py           # Cliente A2A de prueba (`a2a-agent-client`)
 ├── tests/                   # pytest (unitarios + integración ligera)
 ├── .env.example
+├── COMMANDS.md              # referencia completa de comandos
 ├── Dockerfile
 ├── Makefile
 ├── pyproject.toml           # Dependencias + configuración de herramientas
@@ -110,7 +111,7 @@ contra el árbol de trabajo. Cada capa tiene una única responsabilidad:
 ```
 Cliente A2A ──► GET  /.well-known/agent-card.json   (descubre el agente)
             ──► POST /            (JSON-RPC 2.0)
-            ──► POST /v1/message:send  (HTTP+JSON/REST)
+            ──► POST /message:send      (HTTP+JSON/REST)
                         │
                 DefaultRequestHandler
                         │
@@ -166,7 +167,10 @@ A2A_MODEL=openai:llama3.2
 
 ## Comandos
 
+Los más habituales:
+
 ```bash
+uv sync                          # instala el entorno
 uv run a2a-agent                 # servidor
 uv run a2a-agent --reload        # servidor con recarga en caliente
 uv run a2a-agent-client "hola"   # cliente A2A de prueba
@@ -178,6 +182,11 @@ uv run ruff format .             # formato
 uv run mypy                      # tipado estático
 make check                       # lint + tipos + tests
 ```
+
+📖 **Referencia completa: [COMMANDS.md](COMMANDS.md)** — instalación de `uv`,
+todas las flags del servidor y del cliente, ejemplos `curl` de cada endpoint
+(JSON-RPC y REST), gestión de dependencias, tests, Docker, flujo de git y
+solución de problemas.
 
 ## Docker
 
