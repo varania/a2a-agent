@@ -4,3 +4,50 @@
 
 # LangGraph
 .langgraph_api/
+
+# --- Python -----------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+wheels/
+*.egg-info/
+.eggs/
+*.egg
+
+# --- Virtual environments ---------------------------------------------------
+.venv/
+venv/
+ENV/
+
+# --- uv ---------------------------------------------------------------------
+# uv.lock is committed on purpose (reproducible builds).
+# .python-version is committed on purpose (pins the interpreter).
+
+# --- Testing / tooling ------------------------------------------------------
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.tox/
+
+# --- Environment / secrets --------------------------------------------------
+.env
+.env.*
+!.env.example
+
+# --- IDEs / OS --------------------------------------------------------------
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# --- Logs / local data ------------------------------------------------------
+logs/
+*.log
